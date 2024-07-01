@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04
 
 ARG shell=/bin/bash
 ENV DEBIAN_FRONTEND noninteractive
@@ -16,5 +16,4 @@ RUN apt update && \
 RUN apt update && \
     apt install python3-pip -y && \
     ln -s /usr/bin/python3 /usr/bin/python && \
-    ln -s /usr/bin/pip3 /usr/bin/pip && \
     rm -rf /var/lib/apt/lists/*
